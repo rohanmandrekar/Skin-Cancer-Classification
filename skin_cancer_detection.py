@@ -1,13 +1,13 @@
 
 
 # reference: https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000/discussion/183083
-classes={0:('actinic keratoses and intraepithelial carcinomae'),
-         1:('basal cell carcinoma'),
-         2:('benign keratosis-like lesions'),
-         3:('dermatofibroma'),
-         4:(' melanocytic nevi'),
-         5:(' pyogenic granulomas and hemorrhage'),
-         6:('melanoma')}
+classes={0:('actinic keratoses and intraepithelial carcinomae(Cancer)'),
+         1:('basal cell carcinoma(Cancer)'),
+         2:('benign keratosis-like lesions(Non-Cancerous)'),
+         3:('dermatofibroma(Non-Cancerous)'),
+         4:('melanocytic nevi(Non-Cancerous)'),
+         5:('pyogenic granulomas and hemorrhage(Can lead to cancer)'),
+         6:('melanoma(Cancer)')}
 
 
 from tensorflow.keras.models import Sequential
@@ -39,9 +39,6 @@ model.add(tf.keras.layers.BatchNormalization())
 model.add(Dense(7,activation='softmax'))
 
 model.summary()
-
-
-
 
 
 model.load_weights('C:/Users/USER/Desktop/Skin Cancer Classification/Skin-Cancer-Classification/best_model.h5')

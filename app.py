@@ -1,6 +1,6 @@
 from flask import Flask,flash,jsonify,request,render_template,redirect,url_for
-from PIL import Image
-import numpy
+import PIL
+import numpy as np
 import os
 import skin_cancer_detection as SCD
 from werkzeug.utils import secure_filename
@@ -16,15 +16,15 @@ def runhome():
 @app.route('/showresult', methods=["GET","POST"])
 def show():
 	pic=request.files["pic"]
-	inputimg = Image.open(pic).convert('RGB')
+	inputimg = PIL.Image.open(pic)
 	inputimg=inputimg.resize((28,28))
-	img = numpy.array(inputimg).reshape(-1,28,28,3)
+	img = np.array(inputimg).reshape(-1,28,28,3)
 	result=SCD.model.predict(img)
 
 	result=result.tolist()
 	print(result)
 	max_prob=max(result[0])
-	class_ind=list(result[0]).index(max_prob)
+	class_ind=result[0].index(max_prob)
 	print(class_ind)
 	result=SCD.classes[class_ind]
 
