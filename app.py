@@ -20,9 +20,14 @@ def show():
 	inputimg=inputimg.resize((28,28))
 	img = numpy.array(inputimg).reshape(-1,28,28,3)
 	result=SCD.model.predict(img)
+
 	result=result.tolist()
-	class_ind=result.index(max(result))
+	print(result)
+	max_prob=max(result[0])
+	class_ind=list(result[0]).index(max_prob)
+	print(class_ind)
 	result=SCD.classes[class_ind]
+
 
 	if (class_ind==0):
 		info="Actinic keratosis also known as solar keratosis or senile keratosis are names given to intraepithelial keratinocyte dysplasia. As such they are a pre-malignant lesion or in situ squamous cell carcinomas and thus a malignant lesion."
