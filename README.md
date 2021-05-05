@@ -39,3 +39,5 @@ This contains the definition of the CNN model.
 
 ## best_model.h5:
 Contains the weights of the best model.
+
+## [Read more about the project here](https://rohanmandrekar.netlify.app/project/skin-cancer-classification/)
