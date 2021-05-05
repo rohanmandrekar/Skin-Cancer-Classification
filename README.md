@@ -2,12 +2,19 @@
 
 ## Libraries Used: 
 • Numpy
+
 • Keras
+
 • Tensorflow
+
 • Pandas
+
 • matplotlib
+
 • PIL
+
 • Flask
+
 • Seaborn
 
 ## Skin_Cancer_Detection.ipynb:
