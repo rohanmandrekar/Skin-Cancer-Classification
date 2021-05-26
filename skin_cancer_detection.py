@@ -41,4 +41,4 @@ model.add(Dense(7,activation='softmax'))
 model.summary()
 
 
-model.load_weights('C:/Users/USER/Desktop/Skin Cancer Classification/Skin-Cancer-Classification/best_model.h5')
+model.load_weights('/best_model.h5')
