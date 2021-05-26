@@ -16,7 +16,6 @@ decorator==4.4.0
 dnspython==1.16.0
 Flask==1.1.1
 Flask-Cors==3.0.8
-fctnl
 gast==0.3.3
 gcloud==0.18.3
 glob2==0.7
